@@ -16,7 +16,7 @@ public class LoginCotroller {
 	@RequestMapping(value="/login", method = RequestMethod.POST)
 	public String login(@ModelAttribute(name="loginForm") LoginForm loginForm, Model model) {
 		
-		//checking for login credentials
+		//checking username and passowrd
 		
 		String username = loginForm.getUsername();
 		String password = loginForm.getPassword();
@@ -28,7 +28,7 @@ public class LoginCotroller {
 			return "redirect:/home";
 		}
 		
-		//if usename or password is incorrect
+		//if username or password is incorrect
 		else return "index";
 	}	
 		
